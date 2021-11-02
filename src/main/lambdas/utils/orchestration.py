@@ -17,6 +17,7 @@ def puppy(args):
         try:
             trigger_sns_topic(os.environ['PUPPY_SNS'],message)
         except Exception as e:
+            logger.error(str(e))
             update_item_dynamo(args['execution_id'],'puppy','failed')
         else:
             update_item_dynamo(args['execution_id'],'puppy','triggered')
