@@ -26,7 +26,7 @@ def put_item_dynamo(execution_id,status_object,origin,to):
         Item = {'execution_id': execution_id, 'execution_status': status_object, 'origin': origin,'to': to }
     )
 
-def update_item_dynamo(execution_id,feature,status):
+def update_item_status_dynamo(execution_id,feature,status):
 
     table = get_table('solbot_executions')
 
@@ -34,7 +34,7 @@ def update_item_dynamo(execution_id,feature,status):
         Key={
             'execution_id': execution_id
         },
-        UpdateExpression="SET execution_status.#feature = :val",  
+        UpdateExpression="SET execution_status.#feature.current_status = :val",  
         ExpressionAttributeNames={  
             "#feature": feature  
         },  

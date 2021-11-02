@@ -1,9 +1,11 @@
 from src.main.lambdas.utils.logs import logger
 from src.main.lambdas.utils.orchestration import feature_map
+import urllib.parse
 def lambda_handler(event,context):
+    logger.info(event)
     if event:
         if 'Body' in event:
-            message_in = event['Body'].lower()
+            message_in = urllib.parse.unquote_plus(event['Body'].lower()).strip()
             message_in_break = message_in.split(' ',)
             if len(message_in_break) > 1:
                 

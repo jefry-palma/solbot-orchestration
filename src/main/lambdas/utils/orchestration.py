@@ -1,6 +1,6 @@
 import datetime
 import os
-from src.main.lambdas.utils.aws import trigger_sns_topic,put_item_dynamo,update_item_dynamo
+from src.main.lambdas.utils.aws import trigger_sns_topic,put_item_dynamo,update_item_status_dynamo
 from src.main.lambdas.utils.logs import logger
 import urllib.parse
 def puppy(args):
@@ -18,9 +18,9 @@ def puppy(args):
             trigger_sns_topic(os.environ['PUPPY_SNS'],message)
         except Exception as e:
             logger.error(str(e))
-            update_item_dynamo(args['execution_id'],'puppy','failed')
+            update_item_status_dynamo(args['execution_id'],'puppy','failed')
         else:
-            update_item_dynamo(args['execution_id'],'puppy','triggered')
+            update_item_status_dynamo(args['execution_id'],'puppy','triggered')
         return args
     else:
         raise Exception('Not the correct number of arguments.')
@@ -32,7 +32,9 @@ def setup_puppy(args):
     args['execution_id'] = execution_id
 
     status = {}
-    status['puppy'] = 'initiated'
+    status['puppy'] = {}
+    status['puppy']['current_status'] = 'initiated'
+    status['puppy']['execution_data'] = {}
 
     origin = urllib.parse.unquote(args['To'])
     to = urllib.parse.unquote(args['From'])
