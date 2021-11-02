@@ -1,0 +1,22 @@
+{
+    "Records": [
+        {
+            "EventSource": "aws:sns",
+            "EventVersion": "1.0",
+            "EventSubscriptionArn": "arn:aws:sns:us-east-1:165443708813:Image-Saver:0b411501-cfdd-424c-9433-cd61202020e9",
+            "Sns": {
+                "Type": "Notification",
+                "MessageId": "5d67aa22-6dbe-54dc-9805-f3d83c88c3d8",
+                "TopicArn": "arn:aws:sns:us-east-1:165443708813:Image-Saver",
+                "Subject": null,
+                "Message": "{\"query\": \"puppy images of a husky\"}",
+                "Timestamp": "2021-11-01T20:32:54.036Z",
+                "SignatureVersion": "1",
+                "Signature": "HJIeXPP3dlrU4vuR3tnyFBYuuEc+VkSfPRovm3BGunnc44STEeWg1F06rj+piS2UvxLQHkvFk4UrSIRnyKIAKfYBnbqYxGuCeXc480g3rkF4UBQgkUkO9Yo/vyjJj3NxbXXoPVxY0Php4VKGCe1g206ARqy25WROS6VfxtfiWqnA2+gAJFid+pyzNbOuJf04CE0KWLVKDQ27/6U31lZ5Zt/Vm8ksFsgbdCHnmg3A3vST4dzEETzoQ0zWeFtjGeNrDX6WRcNUxPEyMlDMhm7A8ArYZkKJpbX6+Qf0ZOTdkxsQ9T6IaZvY6FkL6XcildeecAPSpFmM25mHa2hFHJr85A==",
+                "SigningCertUrl": "https://sns.us-east-1.amazonaws.com/SimpleNotificationService-7ff5318490ec183fbaddaa2a969abfda.pem",
+                "UnsubscribeUrl": "https://sns.us-east-1.amazonaws.com/?Action=Unsubscribe&SubscriptionArn=arn:aws:sns:us-east-1:165443708813:Image-Saver:0b411501-cfdd-424c-9433-cd61202020e9",
+                "MessageAttributes": {}
+            }
+        }
+    ]
+}

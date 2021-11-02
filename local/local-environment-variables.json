@@ -1,0 +1,4 @@
+{
+    "PUPPY_SNS": "arn:aws:sns:us-east-1:165443708813:Image-Saver",
+    "REGION": "us-east-1"
+}
